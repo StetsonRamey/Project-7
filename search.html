@@ -27,39 +27,50 @@
 <body>
 
     <!-- Sign in container -->
-    <div class="container">     
-        <div class="row">           
+    <div class="container">
+        <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
-                    
+
                     <!-- Destination header -->
                     <span>
-                        <h4>Where are you going?</h4><br><br>    
+                        <i class="far fa-map"></i>
+                        <h4>Where are you going?</h4>
+                        <br><br>
                     </span>
-                    
+
                     <!-- Destination Input -->
                     <div class="panel-body">
                         <form>
+
+                            <!-- City Input Field -->
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fas fa-map-pin"></i></span>
-                                <input type="text" id="dest-input" class="form-control" placeholder="Kansas City, MO">   
+                                <span class="input-group-addon">
+                                    <i class="fas fa-map-pin"></i>
+                                </span>
+                                <input type="text" id="city-input" class="form-control" placeholder="New York City">
                             </div>
                             <hr class="line"><br>
 
-                            <!-- Possible dropdown menu -->
-                            <!-- <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                      Activities
-                                      <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                      <li>Restaurants</li>
-                                      <li>Bars</li>
-                                      <li>Outdoors</li>
-                                    </ul>
-                            </div> -->
+                            <!-- State Input Field -->
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fas fa-map-pin"></i>
+                                </span>
+                                <input type="text" id="state-input" class="form-control" placeholder="New York">
+                            </div>
+                            <hr class="line"><br>
 
+                            <!-- Country Input Field -->
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fas fa-map-pin"></i>
+                                </span>
+                                <input type="text" id="country-input" class="form-control" placeholder="USA">
+                            </div>
+                            <hr class="line"><br>
 
+                            <!-- Specific Activity Needed -->
                             <div class="form-group">
                                 <select class="form-control" id="activity-input">
                                     <option>Restaurants</option>
@@ -69,6 +80,7 @@
                             </div>
                             <br><br>
 
+                            <!-- Search Button -->
                             <div class="form-group">
                                 <input type="search" id="login-btn" class="btn btn-success btn-lg btn-block" value="Search">
                             </div>

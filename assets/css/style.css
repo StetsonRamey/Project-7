@@ -25,7 +25,11 @@ PANEL STYLING - SIGN IN PAGE
     padding-top: 50px;
     padding-left: 25px;
     padding-right: 25px;
-   
+}
+
+.fa-map-signs {
+    font-size: 4em;
+    margin-bottom: 20px;
 }
 
 .panel-body {
@@ -72,13 +76,40 @@ h4 {
 
 .line {
     margin-top: 5px;
+    margin-bottom: -2px;
 }
 
 /**************************************
-PANEL STYLING - SIGN IN PAGE
+PANEL STYLING - SEARCH PAGE
 **************************************/
 
-#dest-input {
+.fa-map {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+
+#city-input {
+    font-size: 20px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-radius: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#state-input {
+    font-size: 20px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-radius: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#country-input {
     font-size: 20px;
     color: #fff;
     background: transparent;
@@ -98,4 +129,6 @@ PANEL STYLING - SIGN IN PAGE
     box-shadow: none;
 }
 
-
+select option {
+    background: #000;
+}

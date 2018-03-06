@@ -24,43 +24,52 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body background="assets/images/bg-img.jpg">
 
     <!-- Sign in container -->
-    <div class="container">     
-        <div class="row">           
+    <div class="container">
+        <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="panel panel-default">
-                    
-                    <!-- Title and Google Sign in button -->
+
+                    <!-- Logo, Title, Short Description -->
                     <span>
-                        <i class="fas fa-map-signs"></i>
-                        <h4>Sign in to get going!</h4><br><br>
-                        <!-- <button type="button" class="btn btn-danger btn-lg btn-block">Sign in with Google | <i class="fab fa-google-plus-g"></i></button> -->   
+                        <img class="logo" src="assets/images/project-logo.png" alt="Project 7">
+                        <h4>Sign in to get going!</h4>
+                        <br>
+                        <p class="p-type">The quickest and easiest way to search and create a to-do list for your trip!</p>
+                        <br>
                     </span>
-            
-                    <!-- <h4>OR</h4><br><hr class="divider"> -->
-                    
+
                     <!-- Email, Password input fields. Login button -->
                     <div class="panel-body">
                         <form>
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fas fa-envelope"></i></span>
-                                <input type="email" id="email-input" class="form-control" placeholder="Email">                         
+                                <span class="input-group-addon">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <input type="email" id="email-input" class="form-control" placeholder="Email">
                             </div>
-                            <hr class="line">
+                            <hr class="signin-line">
 
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="fas fa-key"></i></span>
-                                <input type="password" id="pwd-input" class="form-control" placeholder="Password">                           
+                                <span class="input-group-addon">
+                                    <i class="fas fa-key"></i>
+                                </span>
+                                <input type="password" id="pwd-input" class="form-control" placeholder="Password">
                             </div>
-                            <hr class="line"><br>
+                            <hr class="signin-line">
+                            <br>
 
                             <div class="form-group">
                                 <input type="submit" id="login-btn" class="btn btn-success btn-lg btn-block" value="Login">
                             </div>
                         </form>
                         <br>
+
+                        <!-- Short disclaimer with link to NOT save -->
+                        <p class="disclaimer">Don't wish to save your trip? Click
+                            <a href="search.html">here</a> to continue searching.</p>
                     </div>
                 </div>
             </div>

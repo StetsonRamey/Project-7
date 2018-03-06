@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Where To?</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:400,500,600" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Firebase Link -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script> -->
+
+    <!-- My CSS Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Sign in container -->
+    <div class="container">     
+        <div class="row">           
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    
+                    <!-- Destination header -->
+                    <span>
+                        <h4>Where are you going?</h4><br><br>    
+                    </span>
+                    
+                    <!-- Destination Input -->
+                    <div class="panel-body">
+                        <form>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fas fa-map-pin"></i></span>
+                                <input type="text" id="dest-input" class="form-control" placeholder="Kansas City, MO">   
+                            </div>
+                            <hr class="line"><br>
+
+                            <!-- Possible dropdown menu -->
+                            <!-- <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                      Activities
+                                      <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                      <li>Restaurants</li>
+                                      <li>Bars</li>
+                                      <li>Outdoors</li>
+                                    </ul>
+                            </div> -->
+
+
+                            <div class="form-group">
+                                <select class="form-control" id="activity-input">
+                                    <option>Restaurants</option>
+                                    <option>Bars</option>
+                                    <option>Outdoors</option>
+                                </select>
+                            </div>
+                            <br><br>
+
+                            <div class="form-group">
+                                <input type="search" id="login-btn" class="btn btn-success btn-lg btn-block" value="Search">
+                            </div>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+</body>
+
+</html>

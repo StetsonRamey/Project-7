@@ -131,25 +131,3 @@ PANEL STYLING - SEARCH PAGE
     margin-top: 5px;
     margin-bottom: -2px;
 }
-
-/* DON'T NEED THESE FOR NOW
-#state-input {
-    font-size: 20px;
-    color: #fff;
-    background: transparent;
-    border: none;
-    border-radius: none;
-    outline: none;
-    box-shadow: none;
-}
-
-#country-input {
-    font-size: 20px;
-    color: #fff;
-    background: transparent;
-    border: none;
-    border-radius: none;
-    outline: none;
-    box-shadow: none;
-}
-*/

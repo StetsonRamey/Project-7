@@ -5,7 +5,6 @@ BODY STYLING
 body {
     margin: 0;
     padding: 0;
-    background: url("../images/bg-img.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -25,7 +24,11 @@ PANEL STYLING - SIGN IN PAGE
     padding-top: 50px;
     padding-left: 25px;
     padding-right: 25px;
-   
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
 }
 
 .panel-body {
@@ -38,6 +41,10 @@ h4 {
     margin: 0;
     padding: 0;
     color: #fff;
+}
+
+.p-type {
+    font-size: 1.3em;
 }
 
 .divider {
@@ -70,15 +77,57 @@ h4 {
     box-shadow: none;
 }
 
-.line {
+.signin-line {
     margin-top: 5px;
+    margin-bottom: 18px;
+}
+
+.disclaimer {
+    font-size: 1.1em;
+}
+
+.disclaimer a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #63b660;
+}
+
+.disclaimer a:hover {
+    text-decoration: none;
+    font-weight: 600;
+    color: #4c9b48;
 }
 
 /**************************************
-PANEL STYLING - SIGN IN PAGE
+PANEL STYLING - SEARCH PAGE
 **************************************/
 
-#dest-input {
+.fa-map {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+#city-input {
+    font-size: 20px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-radius: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#state-input {
+    font-size: 20px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-radius: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#country-input {
     font-size: 20px;
     color: #fff;
     background: transparent;
@@ -98,4 +147,7 @@ PANEL STYLING - SIGN IN PAGE
     box-shadow: none;
 }
 
-
+.search-line {
+    margin-top: 5px;
+    margin-bottom: -2px;
+}

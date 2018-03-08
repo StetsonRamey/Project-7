@@ -12,11 +12,11 @@ body {
 }
 
 /**************************************
-PANEL STYLING - SIGN IN PAGE
+PANEL STYLING - INDEX/SIGN IN PAGE
 **************************************/
 
 .panel {
-    margin-top: 100px;
+    margin-top: 75px;
     border: 0px;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
@@ -107,27 +107,7 @@ PANEL STYLING - SEARCH PAGE
     margin-bottom: 20px;
 }
 
-#city-input {
-    font-size: 20px;
-    color: #fff;
-    background: transparent;
-    border: none;
-    border-radius: none;
-    outline: none;
-    box-shadow: none;
-}
-
-#state-input {
-    font-size: 20px;
-    color: #fff;
-    background: transparent;
-    border: none;
-    border-radius: none;
-    outline: none;
-    box-shadow: none;
-}
-
-#country-input {
+#dest-input {
     font-size: 20px;
     color: #fff;
     background: transparent;
@@ -151,3 +131,26 @@ PANEL STYLING - SEARCH PAGE
     margin-top: 5px;
     margin-bottom: -2px;
 }
+
+/****** DON'T NEED THESE FOR NOW
+
+#state-input {
+    font-size: 20px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-radius: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#country-input {
+    font-size: 20px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-radius: none;
+    outline: none;
+    box-shadow: none;
+}
+**********************************/

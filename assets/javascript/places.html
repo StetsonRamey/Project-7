@@ -25,7 +25,7 @@
                 radius: '10000',
                 types: ['bars']
             };
-            //infowindow = new google.maps.InfowWindow();
+            infowindow = new google.maps.InfoWindow();
             service = new google.maps.places.PlacesService(map);
 
             service.nearbySearch(request, callback);

@@ -35,7 +35,7 @@ function geocode(e) {
 
 
     // change to the results page
-    window.location.href = 'results.html' + "?lat=" + lat + "&lng=" + lng + "&cat=" + catgegory;
+    window.location.href = 'results.html' + "?lat=" + lat + "&lng=" + lng + "&cat=" + category;
 
   })
 }

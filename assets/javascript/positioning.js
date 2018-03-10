@@ -8,6 +8,7 @@ var markers = [];
 var lat;
 var lng;
 var cat = [];
+var resultObject;
 function initialize() {
 
   var resultsURl = window.location.href;
@@ -53,15 +54,22 @@ function initialize() {
         service.nearbySearch(request, callback);
     })
 }
+
 function callback(results, status) {
-  console.log(results);
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
             markers.push(createMarker(results[i]));
-
         }
     }
+
+
+    //=============STETSON TRYING TO GET TODO LIST TO POPULATE==========
+    console.log(results);
+    var testToDo = results[0].name;
+    console.log(testToDo);
+    $('#myUL').html("<li>" + testToDo + "</li>");
 }
+
 function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({

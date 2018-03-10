@@ -25,7 +25,7 @@
             request = {
                 location: center,
                 radius: '10000',
-                types: ['restaurants']
+                types: ['stadium']
             };
             infowindow = new google.maps.InfoWindow();
             service = new google.maps.places.PlacesService(map);
@@ -42,7 +42,7 @@
                 var request = {
                     location: new google.maps.LatLng(lat, lng),
                     radius: 10000,
-                    types: ['bars']
+                    types: ['stadium']
                 };
                 service.nearbySearch(request, callback);
             })

@@ -13,9 +13,11 @@
         var request;
         var service;
         var markers = [];
+        var lat;
+        var lng;
 
         function initialize() {
-            var center = new google.maps.LatLng(39.8251401, -100.5348322);
+            var center = new google.maps.LatLng(39.0997, -94.5786);
             map = new google.maps.Map(document.getElementById('map'), {
                 center: center,
                 zoom: 13
@@ -23,7 +25,7 @@
             request = {
                 location: center,
                 radius: '10000',
-                types: ['bars']
+                types: ['restaurants']
             };
             infowindow = new google.maps.InfoWindow();
             service = new google.maps.places.PlacesService(map);
@@ -31,11 +33,14 @@
             service.nearbySearch(request, callback);
 
             google.maps.event.addListener(map, 'rightclick', function (event) {
-                map.setCenter(event, latLng)
+                console.log(event.latLng.lat());
+                lat = event.latLng.lat();
+                lng = event.latLng.lng();
+                map.setCenter({lat, lng})
                 clearResults(markers);
 
                 var request = {
-                    location: event.latLng,
+                    location: new google.maps.LatLng(lat, lng),
                     radius: 10000,
                     types: ['bars']
                 };

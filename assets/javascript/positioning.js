@@ -10,6 +10,7 @@ function geocode(e) {
   e.preventDefault();
 
   var location = document.getElementById("dest-input").value;
+  var category = document.getElementById("activity-input").value;
 
   axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
     params: {
@@ -30,7 +31,7 @@ function geocode(e) {
 
 
     // change to the results page
-    window.location.href = 'results.html' + "?lat=" + lat + "&lng=" + lng;
+    window.location.href = 'results.html' + "?lat=" + lat + "&lng=" + lng + "&cat=" + catgegory;
 
   })
 
@@ -46,8 +47,10 @@ function initMap() {
   var params = resultsURl.split("&");
   var lat = parseFloat(params[0].split("=")[1]);
   var lng = parseFloat(params[1].split("=")[1]);
+  var cat = params[2].split("=")[1];
   console.log(lat);
   console.log(lng);
+  console.log(cat);
 
 
   var location = {

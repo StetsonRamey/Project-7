@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  
   <link rel="stylesheet" type="text/css" href="assets/css/results-style.css">
 
+  <!-- To Do List Styling -->
+  <link rel="stylesheet" type="text/css" href="assets/css/todo-style.css">
 
   <!-- Axios CDN -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 
   <title>Project-7</title>
 </head>
@@ -36,8 +38,9 @@
                     </a>
         </div>
 
+        <!-- Lance commented out for testing todo list -->
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar-collapse-2">
+        <!--<div class="collapse navbar-collapse" id="navbar-collapse-2">
           <ul class="nav navbar-nav navbar-right">
             <li>
               <a href="#"></a>
@@ -60,7 +63,8 @@
             <li>
               <a class="btn btn-default btn-outline btn-circle collapsed" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign in</a>
             </li>
-          </ul>
+          </ul> -->
+
           <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
             <form class="navbar-form navbar-right form-inline" role="form">
               <div class="form-group">
@@ -89,12 +93,29 @@
   <div class="container">
     <div class="row-search-results">
       <h4>
-                        <i class="fas fa-map-marker-alt"></i>&nbsp;Search Results: New York City</h4>
+        <i class="fas fa-map-marker-alt"></i>&nbsp;Search Results: New York City</h4>
       <hr>
     </div>
     <div class="row">
 
-      <div class="col-md-6 col-sm-6 col-xs-12">
+      <!-- Added a TO DO List -->
+      <div class="col-md-6 col-sm-6 col-xs-12 container">
+          <div class="row todo-wrapper">
+                  <div id="myDIV" class="header">
+                      <input type="text" id="myInput" placeholder="Add Activity...">
+                      <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+
+                  <ul id="myUL">
+                      <li>Eat Food</li>
+                      <li class="checked">Drink Beer</li>
+                  </ul>
+          </div>
+      </div>
+
+      <!-- Lance commented this out for now -->
+
+      <!-- <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="table-wrapper">
           <table class="table table-striped">
             <thead>
@@ -122,7 +143,6 @@
                 <td></td>
                 <td></td>
 
-
               </tr>
               <tr>
                 <td>3.</td>
@@ -130,7 +150,6 @@
                 <td></td>
                 <td></td>
                 <td></td>
-
 
               </tr>
               <tr>
@@ -140,7 +159,6 @@
                 <td></td>
                 <td></td>
 
-
               </tr>
               <tr>
                 <td>5.</td>
@@ -148,7 +166,6 @@
                 <td></td>
                 <td></td>
                 <td></td>
-
 
               </tr>
               <tr>
@@ -166,7 +183,6 @@
                 <td></td>
                 <td></td>
 
-
               </tr>
               <tr>
                 <td>8..</td>
@@ -175,7 +191,6 @@
                 <td></td>
                 <td></td>
 
-
               </tr>
               <tr>
                 <td>9.</td>
@@ -183,7 +198,6 @@
                 <td></td>
                 <td></td>
                 <td></td>
-
 
               </tr>
               <tr>
@@ -197,7 +211,7 @@
           </table>
 
         </div>
-      </div>
+      </div> -->
 
       <!-- Map -->
 
@@ -236,6 +250,8 @@
 
   <!-- link to javascript file -->
   <script type="text/javascript" src="assets/javascript/positioning.js"></script>
+
+  <script type="text/javascript" src="assets/javascript/todo-list.js"></script>
 
 </body>
 

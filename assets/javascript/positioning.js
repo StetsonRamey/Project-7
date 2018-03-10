@@ -12,9 +12,13 @@ function geocode(e) {
   var location = document.getElementById("dest-input").value;
   var category = document.getElementById("activity-input").value;
 
+  // Added this for google places
+  var activity = document.getElementById("activity-input").value;
+
   axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
     params: {
       address: location,
+      types: activity,
       key: "AIzaSyCVv-LZUkuQRgMEx1vpNqhMnDY7LZaWnik"
     }
   })
@@ -34,7 +38,6 @@ function geocode(e) {
     window.location.href = 'results.html' + "?lat=" + lat + "&lng=" + lng + "&cat=" + catgegory;
 
   })
-
 }
 
 // place a map on the screen
@@ -52,17 +55,21 @@ function initMap() {
   console.log(lng);
   console.log(cat);
 
-
   var location = {
     lat: lat,
     lng: lng
   };
+
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 8,
+    zoom: 12,
     center: location
   });
+  
   var marker = new google.maps.Marker({
     position: location,
     map: map
   });
 }
+
+
+// <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVv-LZUkuQRgMEx1vpNqhMnDY7LZaWnik&libraries=places"></script>

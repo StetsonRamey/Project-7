@@ -1,56 +1,22 @@
-// Grab location form
-var locationForm = document.getElementById("location-form");
 
-// Listen for submit
-locationForm.addEventListener("submit", geocode);
+//=====================================CRISTIANS SUPER CODE
+var map;
+var infowindow;
+var request;
+var service;
+var markers = [];
+var lat;
+var lng;
+var cat = [];
+function initialize() {
 
-function geocode(e) {
-
-  // Prevent actual submit
-  e.preventDefault();
-
-  var location = document.getElementById("dest-input").value;
-  var category = document.getElementById("activity-input").value;
-
-  // Added this for google places
-  var activity = document.getElementById("activity-input").value;
-
-  axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
-    params: {
-      address: location,
-      types: activity,
-      key: "AIzaSyCVv-LZUkuQRgMEx1vpNqhMnDY7LZaWnik"
-    }
-  })
-
-  .then(function(response) {
-
-    // Log full response
-    console.log(response);
-
-    // Geometry
-    var lat = response.data.results[0].geometry.location.lat;
-    var lng = response.data.results[0].geometry.location.lng;
-    console.log("LATITUDE: " + lat + "LONGITUDE: " + lng);
-
-
-    // change to the results page
-    window.location.href = 'results.html' + "?lat=" + lat + "&lng=" + lng + "&cat=" + category;
-
-  })
-}
-
-// place a map on the screen
-
-function initMap() {
-  // change to the results page
   var resultsURl = window.location.href;
   console.log(resultsURl);
 
   var params = resultsURl.split("&");
-  var lat = parseFloat(params[0].split("=")[1]);
-  var lng = parseFloat(params[1].split("=")[1]);
-  var cat = params[2].split("=")[1];
+  lat = parseFloat(params[0].split("=")[1]);
+  lng = parseFloat(params[1].split("=")[1]);
+  cat.push(params[2].split("=")[1]);
   console.log(lat);
   console.log(lng);
   console.log(cat);
@@ -60,16 +26,58 @@ function initMap() {
     lng: lng
   };
 
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: location
-  });
-  
-  var marker = new google.maps.Marker({
-    position: location,
-    map: map
-  });
+    var center = new google.maps.LatLng(lat, lng);
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: center,
+        zoom: 13
+    });
+    request = {
+        location: center,
+        radius: 10000,
+        types: cat
+    };
+    infowindow = new google.maps.InfoWindow();
+    service = new google.maps.places.PlacesService(map);
+    service.nearbySearch(request, callback);
+    google.maps.event.addListener(map, 'rightclick', function (event) {
+        console.log(event.latLng.lat());
+        lat = event.latLng.lat();
+        lng = event.latLng.lng();
+        map.setCenter({lat, lng})
+        clearResults(markers);
+        var request = {
+            location: new google.maps.LatLng(lat, lng),
+            radius: 10000,
+            types: cat
+        };
+        service.nearbySearch(request, callback);
+    })
 }
+function callback(results, status) {
+  console.log(results);
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            markers.push(createMarker(results[i]));
 
-
-// <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVv-LZUkuQRgMEx1vpNqhMnDY7LZaWnik&libraries=places"></script>
+        }
+    }
+}
+function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+    });
+    return marker;
+}
+function clearResults(markers) {
+    for (var m in markers) {
+        markers[m].setMap(null)
+    }
+    markers = [];
+}
+google.maps.event.addDomListener(window, 'load', initialize);

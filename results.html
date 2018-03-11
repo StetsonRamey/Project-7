@@ -27,19 +27,19 @@
   <header>
     <!-- Second navbar for sign in -->
     <nav class="navbar navbar-default">
-      <div class="container"> 
-         <!-- New Container -->
+      <div class="container">
+        <!-- New Container -->
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="#">
-                        <img src="assets/images/FaviconPSD_0004_57x57.png">
-                    </a>
+            <img src="assets/images/FaviconPSD_0004_57x57.png">
+          </a>
         </div>
 
         <!-- Lance commented out for testing todo list -->
@@ -95,6 +95,52 @@
   <!-- Table -->
 
   <div class="container">
+
+    <!-- Search Bar -->
+
+    <div class="row-search">
+
+      <div>
+
+        <div class="pull-left" style="margin-right:5px">
+          <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Choose Your Category
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">Bars</a>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">Shopping</a>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" tabindex="-1" href="#">Museums</a>
+              </li>
+              <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="#">Stadiums</a>
+                </li>
+            </ul>
+          </div>
+
+        </div>
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="New York, NY">
+            <span class="input-group-btn">
+              <button class="btn btn-success" type="button">Search</button>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <!-- End Search Bar -->
+
     <div class="row-search-results">
       <h4>
         <i class="fas fa-map-marker-alt"></i>&nbsp;Search Results: New York City</h4>
@@ -148,6 +194,8 @@
   <script type="text/javascript" src="assets/javascript/positioning.js"></script>
 
   <script type="text/javascript" src="assets/javascript/todo-list.js"></script>
+
+  <script type="text/javascript" src="assets/javascript/dropdown-search.js"></script>
 
 </body>
 

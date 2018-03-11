@@ -11,21 +11,21 @@ var cat = [];
 var resultObject;
 function initialize() {
 
-  var resultsURl = window.location.href;
-  console.log(resultsURl);
+    var resultsURl = window.location.href;
+    console.log(resultsURl);
 
-  var params = resultsURl.split("&");
-  lat = parseFloat(params[0].split("=")[1]);
-  lng = parseFloat(params[1].split("=")[1]);
-  cat.push(params[2].split("=")[1]);
-  console.log(lat);
-  console.log(lng);
-  console.log(cat);
+    var params = resultsURl.split("&");
+    lat = parseFloat(params[0].split("=")[1]);
+    lng = parseFloat(params[1].split("=")[1]);
+    cat.push(params[2].split("=")[1]);
+    console.log(lat);
+    console.log(lng);
+    console.log(cat);
 
-  var location = {
-    lat: lat,
-    lng: lng
-  };
+    var location = {
+        lat: lat,
+        lng: lng
+    };
 
     var center = new google.maps.LatLng(lat, lng);
     map = new google.maps.Map(document.getElementById('map'), {
@@ -44,7 +44,7 @@ function initialize() {
         console.log(event.latLng.lat());
         lat = event.latLng.lat();
         lng = event.latLng.lng();
-        map.setCenter({lat, lng})
+        map.setCenter({ lat, lng })
         clearResults(markers);
         var request = {
             location: new google.maps.LatLng(lat, lng),
@@ -62,12 +62,72 @@ function callback(results, status) {
         }
     }
 
-
     //=============STETSON TRYING TO GET TODO LIST TO POPULATE==========
+    // Got the todo list to populate. Moved all js from todo-list.js inside
+    // this callback function and got it to work.
+
     console.log(results);
-    var testToDo = results[0].name;
-    console.log(testToDo);
-    $('#myUL').html("<li>" + testToDo + "</li>");
+
+    // for loop to populate todo list with result name
+    for (var i = 0; i < results.length; i++) {
+        $("#myUL").append("<li>" + results[i].name + "<span class='close'>" + "\u00D7" + "</span>" + "</li>");
+    }
+
+    // Create a "close" button and append it to each list item
+    var myNodelist = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        myNodelist[i].appendChild(span);
+    }
+
+    // Click on a close button to hide the current list item
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
+    }
+
+    // Add a "checked" symbol when clicking on a list item
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function (ev) {
+        if (ev.target.tagName === 'LI') {
+            ev.target.classList.toggle('checked');
+        }
+    }, false);
+
+    // Create a new list item when clicking on the "Add" button
+    function newElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("myInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === '') {
+            alert("You must write something!");
+        } else {
+            document.getElementById("myUL").appendChild(li);
+        }
+        document.getElementById("myInput").value = "";
+
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        li.appendChild(span);
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+    }
 }
 
 function createMarker(place) {

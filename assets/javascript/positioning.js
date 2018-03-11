@@ -69,11 +69,12 @@ function callback(results, status) {
         for (var x = 0; x < testToDo.length; x++) {
             var itemToDo = $("<li>");
             itemToDo.addClass("items");
-            
+
             itemToDo.text(testToDo[x]);
             $("#myUL").append(itemToDo);
         }
         $("<span class='close'>x</span>").appendTo(".items")
+
     }
 }
 
@@ -99,4 +100,9 @@ function clearResults(markers) {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
-//
+//removes todolist item on click
+$(document).ready(function() {
+    $("#myUL").on('click', 'li', function(){
+        $(this).remove();
+    })
+})

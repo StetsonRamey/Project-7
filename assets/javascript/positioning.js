@@ -51,6 +51,7 @@ function initialize() {
             radius: 10000,
             types: cat
         };
+        $("#myUL").empty();
         service.nearbySearch(request, callback);
     })
 }

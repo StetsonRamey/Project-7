@@ -9,23 +9,24 @@ var lat;
 var lng;
 var cat = [];
 var resultObject;
+var testToDo = [];
 function initialize() {
 
-  var resultsURl = window.location.href;
-  console.log(resultsURl);
+    var resultsURl = window.location.href;
+    console.log(resultsURl);
 
-  var params = resultsURl.split("&");
-  lat = parseFloat(params[0].split("=")[1]);
-  lng = parseFloat(params[1].split("=")[1]);
-  cat.push(params[2].split("=")[1]);
-  console.log(lat);
-  console.log(lng);
-  console.log(cat);
+    var params = resultsURl.split("&");
+    lat = parseFloat(params[0].split("=")[1]);
+    lng = parseFloat(params[1].split("=")[1]);
+    cat.push(params[2].split("=")[1]);
+    console.log(lat);
+    console.log(lng);
+    console.log(cat);
 
-  var location = {
-    lat: lat,
-    lng: lng
-  };
+    var location = {
+        lat: lat,
+        lng: lng
+    };
 
     var center = new google.maps.LatLng(lat, lng);
     map = new google.maps.Map(document.getElementById('map'), {
@@ -44,7 +45,7 @@ function initialize() {
         console.log(event.latLng.lat());
         lat = event.latLng.lat();
         lng = event.latLng.lng();
-        map.setCenter({lat, lng})
+        map.setCenter({ lat, lng })
         clearResults(markers);
         var request = {
             location: new google.maps.LatLng(lat, lng),
@@ -57,17 +58,24 @@ function initialize() {
 
 function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
+        console.log(results);
+        console.log(testToDo);
         for (var i = 0; i < results.length; i++) {
             markers.push(createMarker(results[i]));
+            testToDo.push(results[i].name);
+        }
+        for (var x = 0; x < testToDo.length; x++) {
+            var itemToDo = $("<li>");
+            itemToDo.text(testToDo[x]);
+            $("#myUL").append(itemToDo);
+
         }
     }
 
 
     //=============STETSON TRYING TO GET TODO LIST TO POPULATE==========
-    console.log(results);
-    var testToDo = results[0].name;
-    console.log(testToDo);
-    $('#myUL').html("<li>" + testToDo + "</li>");
+
+
 }
 
 function createMarker(place) {

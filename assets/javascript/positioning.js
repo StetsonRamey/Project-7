@@ -9,7 +9,6 @@ var lat;
 var lng;
 var cat = [];
 var resultObject;
-var testToDo = [];
 function initialize() {
 
     var resultsURl = window.location.href;
@@ -59,23 +58,10 @@ function initialize() {
 function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         console.log(results);
-        console.log(testToDo);
         for (var i = 0; i < results.length; i++) {
             markers.push(createMarker(results[i]));
-            testToDo.push(results[i].name);
-        }
-        for (var x = 0; x < testToDo.length; x++) {
-            var itemToDo = $("<li>");
-            itemToDo.text(testToDo[x]);
-            $("#myUL").append(itemToDo);
-
         }
     }
-
-
-    //=============STETSON TRYING TO GET TODO LIST TO POPULATE==========
-
-
 }
 
 function createMarker(place) {

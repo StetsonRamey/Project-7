@@ -60,23 +60,23 @@ function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         console.log(results);
         console.log(testToDo);
+        //Push result object names to an array
         for (var i = 0; i < results.length; i++) {
             markers.push(createMarker(results[i]));
             testToDo.push(results[i].name);
         }
+        //Populate ToDoList with the testToDo array
         for (var x = 0; x < testToDo.length; x++) {
             var itemToDo = $("<li>");
+            itemToDo.addClass("items");
+            
             itemToDo.text(testToDo[x]);
             $("#myUL").append(itemToDo);
-
         }
+        $("<span class='close'>x</span>").appendTo(".items")
     }
-
-
-    //=============STETSON TRYING TO GET TODO LIST TO POPULATE==========
-
-
 }
+
 
 function createMarker(place) {
     var placeLoc = place.geometry.location;
@@ -97,3 +97,6 @@ function clearResults(markers) {
     markers = [];
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
+//

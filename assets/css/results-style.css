@@ -9,11 +9,11 @@ BEN'S SWEET RESULTS PAGE STYLES
 
 hr {
   display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 html,
@@ -28,167 +28,68 @@ body {
 
 /* Nav Bar */
 
-.navbar-brand {
-  position: relative;
-  z-index: 2;
-  height: 70px;
-}
-
-.navbar-nav.navbar-right .btn {
-  position: relative;
-  z-index: 2;
-  padding: 4px 20px;
-  margin: 10px auto;
-  transition: transform 0.3s;
-}
-
-.navbar .navbar-collapse {
-  position: relative;
-  overflow: hidden !important;
-}
-.navbar .navbar-collapse .navbar-right > li:last-child {
-  padding-left: 22px;
-}
-
-.navbar .nav-collapse {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  padding-right: 120px;
-  padding-left: 80px;
+.navbar-header {
+  float: left;
+  text-align: center;
+  height: 110px;
   width: 100%;
 }
-.navbar.navbar-default .nav-collapse {
-  background-color: #f8f8f8;
-}
-.navbar.navbar-inverse .nav-collapse {
-  background-color: #222;
-}
-.navbar .nav-collapse .navbar-form {
-  border-width: 0;
-  box-shadow: none;
-}
-.nav-collapse > li {
-  float: right;
+
+.navbar-brand {
+  margin: 0 auto;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
 }
 
-.btn.btn-circle {
-  border-radius: 50px;
-}
-.btn.btn-primary {
+/* Search Bar */
+
+#activity-input {
+  color: #ffffff;
   background-color: #5FB760;
 }
 
-.navbar-nav.navbar-right .btn:not(.collapsed) {
-  background-color: #5FB760;
-  border-color: rgb(77, 156, 78);
-  color: rgb(255, 255, 255);
-}
-
-.navbar.navbar-default .nav-collapse,
-.navbar.navbar-inverse .nav-collapse {
-  height: auto !important;
-  transition: transform 0.3s;
-  transform: translate(0px, -50px);
-}
-.navbar.navbar-default .nav-collapse.in,
-.navbar.navbar-inverse .nav-collapse.in {
-  transform: translate(0px, 0px);
-}
-
-@media screen and (max-width: 767px) {
-  .navbar .navbar-collapse .navbar-right > li:last-child {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .navbar .nav-collapse {
-    margin: 7.5px auto;
-    padding: 0;
-  }
-  .navbar .nav-collapse .navbar-form {
-    margin: 0;
-  }
-  .nav-collapse > li {
-    float: none;
-  }
-
-  .navbar.navbar-default .nav-collapse,
-  .navbar.navbar-inverse .nav-collapse {
-    transform: translate(-100%, 0px);
-  }
-  .navbar.navbar-default .nav-collapse.in,
-  .navbar.navbar-inverse .nav-collapse.in {
-    transform: translate(0px, 0px);
-  }
-
-  .navbar.navbar-default .nav-collapse.slide-down,
-  .navbar.navbar-inverse .nav-collapse.slide-down {
-    transform: translate(0px, -100%);
-  }
-  .navbar.navbar-default .nav-collapse.in.slide-down,
-  .navbar.navbar-inverse .nav-collapse.in.slide-down {
-    transform: translate(0px, 0px);
-  }
+.row-search {
+  background-color: #ffffff;
+  padding: 20px 20px;
+  box-shadow: 0 5px 30px 0 rgba(16, 90, 226, 0.2);
+  border-radius: 5px 5px 5px 5px;
+  margin: 20px 0;
+  
 }
 
 /* Search Results Row */
 
 .row-search-results {
-  margin: 20px 0;
+  margin: 40px 0 5px 0;
 }
-
-/* Lance commented this out for todo testing */
-
-/* Table */
-/*
-table.table tr th,
-table.table tr td {
-  border-color: #e9e9e9;
-  line-height: 25px;
-  min-height: 25px;
-  height: 25px;
-}
-table.table-striped tbody tr:nth-of-type(odd) {
-  background-color: #fcfcfc;
-}
-.table-wrapper {
-  background: rgb(247, 247, 247);
-  margin: 30px 0;
-  padding: 5px;
-  height: 520px;
-  box-shadow: 0 10px 30px 0 rgba(16, 90, 226, 0.2);
-  border-radius: 5px 5px 5px 5px;
-
-}
-
-/* Table Button */
-/*
-btn btn-primary {
-  display: block;
-  margin: auto;
-}
-*/
 
 /* Map */
 
 #map {
-  margin: 30px 0;
+  margin: 20px 0 30px 0;
   height: 520px;
   box-shadow: 0 10px 30px 0 rgba(16, 90, 226, 0.2);
   border-radius: 5px 5px 5px 5px;
 }
 
-
 /* Footer */
 
-.img-rounded {
-  border-radius: 0px;
+.navbar-fixed-bottom {
+  clear: both;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  /* The fixed height of the footer */
+  margin-top: 50px;
+  height: 70px;
+  background-color: #fff;
+  color: #000;
 }
-/* ==========================================
-END BEN'S SWEET RESULTS PAGE STYLES
-========================================== */
+
+.navbar-text {
+  clear: both;
+  position: inherit;
+  bottom: 0;
+  width: 100%;
+}

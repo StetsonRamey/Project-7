@@ -51,6 +51,7 @@ function initialize() {
             radius: 10000,
             types: cat
         };
+        $("#myUL").empty();
         service.nearbySearch(request, callback);
     })
 }
@@ -66,8 +67,6 @@ function callback(results, status) {
     //=============STETSON TRYING TO GET TODO LIST TO POPULATE==========
     // Got the todo list to populate. Moved all js from todo-list.js inside
     // this callback function and got it to work.
-
-    console.log(results);
 
     // for loop to populate todo list with result name
     for (var i = 0; i < results.length; i++) {

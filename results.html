@@ -103,27 +103,18 @@
       <div>
 
         <div class="pull-left" style="margin-right:5px">
-          <div class="dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Choose Your Category
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">Bars</a>
-              </li>
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">Shopping</a>
-              </li>
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">Museums</a>
-              </li>
-              <li role="presentation">
-                  <a role="menuitem" tabindex="-1" href="#">Stadiums</a>
-                </li>
-            </ul>
+          <div class="pull-left" style="margin-right:5px">
+            <select class="form-control" id="activity-input">
+              <option select hidden>Choose Your Category</option>
+              <option value="restaurant">Restaurants</option>
+              <option value="bar">Bars</option>
+              <option value="shopping_mall">Shopping</option>
+              <option value="museum">Museums</option>
+              <option value="stadium">Stadiums</option>
+            </select>
           </div>
-
         </div>
+
         <div>
           <div class="input-group">
             <input type="text" class="form-control" placeholder="New York, NY">
@@ -135,8 +126,6 @@
 
       </div>
     </div>
-
-
 
 
     <!-- End Search Bar -->

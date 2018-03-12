@@ -1,4 +1,3 @@
-
 //=====================================CRISTIANS SUPER CODE
 var map;
 var infowindow;
@@ -21,6 +20,12 @@ function initialize() {
     console.log(lat);
     console.log(lng);
     console.log(cat);
+    
+    // Brings over location entry and populates in DOM
+    var youreHere = params[3].split("=")[1];
+    // Decodes URL and adds space between location searches
+    var dec = decodeURI(youreHere);
+    $("#place").text(dec);
 
     var location = {
         lat: lat,
@@ -67,6 +72,8 @@ function callback(results, status) {
     //=============STETSON TRYING TO GET TODO LIST TO POPULATE==========
     // Got the todo list to populate. Moved all js from todo-list.js inside
     // this callback function and got it to work.
+
+    console.log(results);
 
     // for loop to populate todo list with result name
     for (var i = 0; i < results.length; i++) {
@@ -134,10 +141,11 @@ function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location
+        position: place.geometry.location,
+        content: place.vicinity
     });
     google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(place.name);
+        infowindow.setContent("<strong>" + place.name + "</strong>" + "<br>" + marker.content);
         infowindow.open(map, this);
     });
     return marker;

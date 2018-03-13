@@ -18,7 +18,7 @@
   <!-- christians API key for the positioning function -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMn-jEhA8SdUxy2P_sg7Dn91IVu4kA36U&libraries=places"></script>
 
-  <title>Project-7</title>
+  <title>The Travel List</title>
 </head>
 
 <body>
@@ -91,9 +91,40 @@
       </div>
     </div>
 
+    <!-- Modal for Search Input No Input At all -->
+    <div class="modal fade" id="myModal-2" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Hey, You Gotta Enter Something!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Search Input check for letters only -->
+    <div class="modal fade" id="myModal-3" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Hey, Letters Only Please!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="row-search-results">
       <h4>
-        <i class="fas fa-map-marker-alt" id="search-result"></i>&nbsp;Results: <span id="place"></span>
+        <i class="fas fa-map-marker-alt" id="search-result"></i>&nbsp;Results:
+        <span id="place"></span>
       </h4>
       <hr>
     </div>
@@ -107,20 +138,20 @@
             <span class="addBtn">Add</span>
           </div>
 
-          <!-- Modal -->
-           <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-             <div class="modal-dialog" role="document">
-               <!-- Modal content-->
-               <div class="modal-content">
-                 <div class="modal-body">
-                   <p>Hey You Gotta Put Some Text In There!</p>
-                 </div>
-                 <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                 </div>
-               </div>
-             </div>
-           </div>
+          <!-- Modal for Add an item to the TO-DO list -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-body">
+                  <p>Hey You Gotta Put Some Text In There!</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <ul id="myUL"></ul>
         </div>
@@ -137,7 +168,7 @@
   <!-- Footer -->
   <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
-      <p class="navbar-text text-center">© 2018 Project 7 - SR, CR, BC, LS
+      <p class="navbar-text text-center">© 2018 The Travel List - SR, CR, BC, LS
         <a href="#" target="_blank"></a>
       </p>
     </div>

@@ -69,24 +69,6 @@ body {
   padding-right: 15px;
 }
 
-/* Search Bar */
-
-#activity-input {
-  color: #ffffff;
-  background-color: #5FB760;
-}
-
-.row-search {
-  background-color: #ffffff;
-  padding: 20px 20px;
-  box-shadow: 0 10px 30px 0 rgba(16, 90, 226, 0.2);
-  border-radius: 5px 5px 5px 5px;
-  margin: 0px 0px 30px 0px;;
-
-}
-
-/* End Search Bar */
-
 /* Search Results Row */
 
 .row-search-results {

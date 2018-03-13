@@ -1,4 +1,3 @@
-
 //=====================================CRISTIANS SUPER CODE
 var map;
 var infowindow;
@@ -21,6 +20,12 @@ function initialize() {
     console.log(lat);
     console.log(lng);
     console.log(cat);
+    
+    // Brings over location entry and populates in DOM
+    var youreHere = params[3].split("=")[1];
+    // Decodes URL and adds space between location searches
+    var dec = decodeURI(youreHere);
+    $("#place").text(dec);
 
     var location = {
         lat: lat,
@@ -51,6 +56,7 @@ function initialize() {
             radius: 10000,
             types: cat
         };
+        $("#myUL").empty();
         service.nearbySearch(request, callback);
     })
 }
@@ -133,10 +139,11 @@ function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location
+        position: place.geometry.location,
+        content: place.vicinity
     });
     google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(place.name);
+        infowindow.setContent("<strong>" + place.name + "</strong>" + "<br>" + marker.content);
         infowindow.open(map, this);
     });
     return marker;
@@ -148,3 +155,11 @@ function clearResults(markers) {
     markers = [];
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+// Search bar new search/results
+$("#submit").click(function() {
+
+    $("#myUL").empty();
+    geocode();
+})
+

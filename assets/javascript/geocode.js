@@ -5,10 +5,10 @@ console.log(document.getElementById("location-form"));
 // Listen for submit
 locationForm.addEventListener("submit", geocode);
 
-function geocode(e) {
+function geocode() {
 
   // Prevent actual submit
-  e.preventDefault();
+  event.preventDefault();
 
   var location = document.getElementById("dest-input").value;
   var category = document.getElementById("activity-input").value;
@@ -36,7 +36,7 @@ function geocode(e) {
 
 
       // change to the results page
-      window.location.href = 'results.html' + "?lat=" + lat + "&lng=" + lng + "&cat=" + category;
+      window.location.href = 'results.html' + "?lat=" + lat + "&lng=" + lng + "&cat=" + category + "&loc=" + location;
 
     })
 }

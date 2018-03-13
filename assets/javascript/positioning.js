@@ -99,13 +99,7 @@ function callback(results, status) {
         }
     }
 
-    // Add a "checked" symbol when clicking on a list item
-    var list = document.querySelector('ul');
-    list.addEventListener('click', function (ev) {
-        if (ev.target.tagName === 'LI') {
-            ev.target.classList.toggle('checked');
-        }
-    }, false);
+
 
     // Create a new list item when clicking on the "Add" button
     $(".addBtn").click(function () {
@@ -162,3 +156,15 @@ $("#submit").click(function() {
     $("#myUL").empty();
     geocode();
 })
+
+// Add a "checked" symbol when clicking on a list item
+$(document).ready(function () {
+var list = document.querySelector('ul');
+list.addEventListener('click', function (ev) {
+
+    if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');
+    }
+}, false);
+
+});

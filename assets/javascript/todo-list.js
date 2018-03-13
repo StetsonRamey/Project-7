@@ -1,6 +1,15 @@
 // TO DO list scripts
 
 
+
+//TODO: do we need this file?  We moved alll this into positioning yes????
+
+
+
+
+
+
+
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
 list.addEventListener('click', function (ev) {

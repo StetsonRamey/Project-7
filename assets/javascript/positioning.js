@@ -73,11 +73,9 @@ function callback(results, status) {
     // Got the todo list to populate. Moved all js from todo-list.js inside
     // this callback function and got it to work.
 
-    console.log(results);
-
     // for loop to populate todo list with result name
     for (var i = 0; i < results.length; i++) {
-        $("#myUL").append("<li>" + results[i].name + "<span class='close'>" + "\u00D7" + "</span>" + "</li>");
+        $("#myUL").append("<li>" + results[i].name + "</li>");
     }
 
     // Create a "close" button and append it to each list item
@@ -164,3 +162,4 @@ $("#submit").click(function() {
     $("#myUL").empty();
     geocode();
 })
+

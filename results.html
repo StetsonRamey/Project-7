@@ -104,8 +104,23 @@
         <div class="row todo-wrapper">
           <div id="myDIV" class="header">
             <input type="text" id="myInput" placeholder="Add Activity...">
-            <span onclick="newElement()" class="addBtn">Add</span>
+            <span class="addBtn">Add</span>
           </div>
+
+          <!-- Modal -->
+           <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+             <div class="modal-dialog" role="document">
+               <!-- Modal content-->
+               <div class="modal-content">
+                 <div class="modal-body">
+                   <p>Hey You Gotta Put Some Text In There!</p>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 </div>
+               </div>
+             </div>
+           </div>
 
           <ul id="myUL"></ul>
         </div>

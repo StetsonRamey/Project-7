@@ -20,7 +20,7 @@ function initialize() {
     console.log(lat);
     console.log(lng);
     console.log(cat);
-    
+
     // Brings over location entry and populates in DOM
     var youreHere = params[3].split("=")[1];
     // Decodes URL and adds space between location searches
@@ -108,15 +108,15 @@ function callback(results, status) {
     }, false);
 
     // Create a new list item when clicking on the "Add" button
-    function newElement() {
+    $(".addBtn").click(function () {
         var li = document.createElement("li");
         var inputValue = document.getElementById("myInput").value;
         var t = document.createTextNode(inputValue);
         li.appendChild(t);
         if (inputValue === '') {
-            alert("You must write something!");
+          $('#myModal').modal("show");
         } else {
-            document.getElementById("myUL").appendChild(li);
+            $("#myUL").prepend(li);
         }
         document.getElementById("myInput").value = "";
 
@@ -132,7 +132,7 @@ function callback(results, status) {
                 div.style.display = "none";
             }
         }
-    }
+    });
 }
 
 function createMarker(place) {
@@ -162,4 +162,3 @@ $("#submit").click(function() {
     $("#myUL").empty();
     geocode();
 })
-

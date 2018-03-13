@@ -157,3 +157,10 @@ function clearResults(markers) {
     markers = [];
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+// Search bar new search/results
+$("#submit").click(function() {
+
+    $("#myUL").empty();
+    geocode();
+})

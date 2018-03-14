@@ -153,8 +153,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
 // Search bar new search/results
 $("#submit").click(function() {
 
-    $("#myUL").empty();
-    geocode();
+    var destValue = document.getElementById("dest-input").value;
+    var catValue = document.getElementById("activity-input").value;
+
+    // Modal for the search input
+    if (destValue === '') {
+        $('#myModal-2').modal("show");
+      } else if (!(/^[a-zA-Z]+$/.test(destValue.replace(/\s/g, '')))) {
+        $('#myModal-3').modal("show");
+      } else {
+        $("#myUL").empty();
+        geocode();
+      }
 })
 
 // Add a "checked" symbol when clicking on a list item

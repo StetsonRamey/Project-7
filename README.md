@@ -1,10 +1,10 @@
-# Project 1 (Codename = Project7) - Real Name = Travel<list>
+# Project 1 (Codename = Project7) - Real Name = Travel`<list>`
 *Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum.*
 
 Updated the portfolio page with link as well
 
 
-[Travel<list>][1]
+[Travel`<list>`][1]
 
 
 [1]: https://stetsonramey.github.io/Project-7/

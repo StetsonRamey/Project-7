@@ -1,7 +1,7 @@
 # Project 1 (Codename = Project7) - Real Name = Travel`<list>`
-*Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum.*
+We set out to create a web application that allows you to easily search a location with specific categories (Restaurants, Bars, Shopping, Museums, Stadiums) and populate the results in a To-Do list. The To-Do list allows you to cross off, delete, and add items, and the corresponding map places markers with information related to each returned place.
 
-Updated the portfolio page with link as well
+See it in action:
 
 
 [Travel`<list>`][1]
@@ -22,25 +22,30 @@ Table of Contents
   Philosophy
   ==========
   The concept is simple:
-  * pull the giphy API
-  * have an initial array of topics
-  * when the page loads, render the array of topics to buttons
-  * when user clicks button, pull 10 gifs and load them to the page in a static state
-  * when you click a gif, it animates, click again, it pauses
-  * input form where you can type a query and it'll put a button on the page that works
+  * utilize Google Geocode API, Google Places API, and Google Maps API
+  * allow user to input destination and category (validation to allow letters only or empty field)
+  * return the destination with markers, info, To-Do list populated with selected category
+  * allow user to cross off, delete, and add items to the To-Do list
+  * user can start a new search with category and destination input field from the results page
+  * allow user to right click inside map to return different places within the same category
 
   Struggles
   =========
-  The tough part was getting the gifs to animate.  I got through it before we went over it in class, and I realized after the way we did it in class is likely more correct (I'll add some thoughts in the Ideas for Improvement Section).  I noticed that static gifs have a `_s` in the URL.  So I researched some methods to split the string and then join it again, basically brute for manipulation of the URL.  
-
-  After that I manipulated the state by setting the state in the class of the container.  Similar to what we did in class, but slightly different.
+  Some of the challenges we encountered:
+  * getting the latitude/longtitude to a different HTML page to use with Google Maps
+  * getting the Google Places API to return the data object
+  * first time using GitHub in a collaborative coding environment (branches, merging, etc.)
+  * getting the returned places to dynamically populate our To-Do list
+  * adding the right-click function for a new location to repopulate the map and To-Do list
 
   Ideas for Improvement
   =====================
-  Were I to do it over, I would modify the state based on the full URL.  In our case, it works fine, but if we were dealing with URLs that contained `_s` or even `_` earlier in the string, that'd be tough to deal with and would break the app.
+  Some of the features we'd like to add:
+  * add Firebase so users can see their search histories, progress, and finished To-Do lists
+  * add more data to the map and To-Do list (reviews, photos, website, open hours, directions)
+  * allow the users current location as a way to search
+  * link a users To-Do list to social media, email, or text
 
   Styling
   =======
-  I added the gif in the header of the page for fun.  I did it with the embed code straight from giphy, and I notice that on hover the right side icons for share and giphy don't show up right.  I could mess with that I think to get it working correctly.
-
-  I played with the responsive settings in bootstrap and got things to jump around the way I wanted them to for mobile, so I'm happy with buttons and input form.  I'd like to mess with the gifs themselves, perhaps making them bigger, messing with sizing, cleaning up the styling for the rating, just small stuff like that.
+  We wanted a clean, simple layout to allow users to quickly see the To-Do list items and map on the same screen. Since it's built using Bootstrap, it allows our web application to be fully responsive and mobile friendly.

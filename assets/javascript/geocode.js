@@ -1,9 +1,28 @@
 // Grab location form
-var locationForm = document.getElementById("location-form");
-console.log(document.getElementById("location-form"));
+// var locationForm = document.getElementById("location-form");
+// console.log(document.getElementById("location-form"));
+
+$("#submit").click(function() {
+  event.preventDefault();
+// debugger;
+  var destValue = document.getElementById("dest-input").value;
+
+  if (destValue === '') {
+    // debugger;
+      $('#searchModal-1').modal("show");
+    } else if (!(/^[a-zA-Z]+$/.test(destValue.replace(/\s/g, '')))) {
+      $('#searchModal-2').modal("show");
+    } else {
+      geocode();
+    }
+});
+
+
+
+
 
 // Listen for submit
-locationForm.addEventListener("submit", geocode);
+// locationForm.addEventListener("submit", geocode);
 
 function geocode() {
 
